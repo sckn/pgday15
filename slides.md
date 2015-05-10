@@ -2,75 +2,77 @@
 #Seckin ALAN
 #\#pgday15
 #Istanbul
-#9 May
-#2015
 
 
 
-## Why PostgreSQL?
+##PostgreSQL?
 
-• Fast and Powerful :){~
-• $$Rich Feature, free Cost
-• Community~}
-
-
-## Why PostgreSQL?
-
-{~• Fast and Powerful :)~}
-• $$Rich Feature, free Cost{~
-• Community~}
+• Hızlı ve Güçlü
+  • ACID - Atomik, Tutuarlı, Izole , Dayanıklı{~
+• Zengin özellik, ücretsiz
+• Topluluk~}
 
 
-## Why PostgreSQL?
+##PostgreSQL?
 
-{~• Fast and Powerful :)
-• $$Rich Feature, free Cost~}
-• Community
-
-
-# Why Python?
-
-• Easy using, learning and writing{~
-• It's Fast!
-• Possible using outside the database world~}
+{~• Hızlı ve Güçlü~}
+• Zengin özellik, ücretsiz
+  • JSONB, HSTORE{~
+• Topluluk~}
 
 
-# Why Python?
+##PostgreSQL?
 
-{~• Easy using, learning and writing~}
-• It's Fast!{~
-• Possible using outside the database world~}
-
-
-# Why Python?
-
-{~• Easy using, learning and writing
-• It's Fast!~}
-• Possible using outside the database world
+{~• Hızlı ve Güçlü
+• Zengin özellik, ücretsiz~}
+• Topluluk
+  • admin, general, announce, performance
+  • Bonus postgresql.org.tr :)
 
 
-# PL/Python ?
+#Python?
 
-• Procedural Language{~
-• Untrusted
-• Only SuperUsers can create function~}
+• Kolay kullanım, basit syntax{~
+• Hızlı!
+• Database dışında program yazabilirsiniz~}
+
+
+#Python?
+
+{~• Kolay kullanım, basit syntax~}
+• Hızlı!{~
+• Database dışında program yazabilirsiniz~}
+
+
+#Python?
+
+{~• Kolay kullanım, basit syntax
+• Hızlı!~}
+• Database dışında program yazabilirsiniz
 
 
 # PL/Python ?
 
-{~• Procedural Language~}
-• Untrusted{~
-• Only SuperUsers can create function~}
+• Yordamsal Dil{~
+• Güvenilmez ! :)
+• Sadece Süper Kullanıcı Fonskiyon Oluşturabilir~}
 
 
 # PL/Python ?
 
-{~• Procedural Language
-• Untrusted~}
-• Only SuperUsers can create function
+{~• Yordamsal Dil~}
+• Güvenilmez ! :){~
+• Sadece Süper Kullanıcı Fonskiyon Oluşturabilir~}
 
 
-#data types
+# PL/Python ?
+
+{~• Yordamsal Dil
+• Güvenilmez ! :)~}
+• Sadece Süper Kullanıcı Fonskiyon Oluşturabilir
+
+
+##Veri Tipleri
 +--------------+----------------+
 |  {~POSTGRESQL~}  |     {~PYTHON~}     |
 +--------------+----------------+
@@ -85,6 +87,26 @@
 
 * in Python3 int, in Python2 long
 Ref: http://bit.ly/1zxWEsS
+
+
+#Kurulum
+
+```sh
+apt-get install postgresql
+```
+
+```sh
+apt-get install postgresql-plpython3-9.4
+```
+
+
+#PL/Python
+```sql
+CREATE LANGUAGE plpythonu;
+
+UPDATE pg_language SET lanpltrusted = true
+	WHERE lanname LIKE 'plpythonu';
+```
 
 
 # cook func
@@ -165,7 +187,17 @@ $$ LANGUAGE plpythonu;
 ```
 
 
-#ANY QUESTIONS?
+#Yetki
+```sql
+GRANT EXECUTE ON FUNCTION
+pyday() TO x_user;
+```
 
-##LET'S START
-#CODING!!!
+
+#pypl
+```sql
+plpy.execute("select 1;")
+```
+
+
+#Sorular?
